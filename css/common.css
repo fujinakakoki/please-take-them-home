@@ -11,7 +11,7 @@
 body{
   font-family: "YuMincho";
 	font-size: 15px;
-  line-height: 35px;
+  line-height: 30px;
   min-width: 375px;
   width: 100%;
 }
@@ -28,12 +28,26 @@ body{
   width: 100%;
   /* border-top: 1px solid green;
   border-bottom: 1px solid red; */
-  /* max-width: 1280px; */
   display: grid;
   grid-template-columns: 10% 40% 40% 10%;
 }
 
-.gothic{
+.footer{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 10% 40% 40% 10%;
+}
+
+.footer-container{
+  grid-column: 2 / 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.footer-text{
+  width: 80%;
   font-family: "YuGothic";
   font-size: 12px;
 }
@@ -42,10 +56,22 @@ body{
   display: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px), screen and (orientation: portrait) {
+  .section{
+    grid-template-columns: 5% 45% 45% 5%;
+  }
+
+  .footer{
+    grid-template-columns: 5% 45% 45% 5%;
+  }
+  .footer-text{
+    width: 100%;
+  }
+
   .pc{
     display: none;
   }
+
   .sp{
     display: inline-block;
   }
