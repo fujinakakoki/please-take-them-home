@@ -9,7 +9,7 @@
 }
 
 body{
-  font-family: "YuMincho";
+  font-family: "YuMincho", "游明朝体", serif;
 	font-size: 15px;
   line-height: 30px;
   min-width: 375px;
@@ -48,7 +48,7 @@ body{
 
 .footer-text{
   width: 80%;
-  font-family: "YuGothic";
+  font-family: "YuGothic", "游ゴシック体", sans-serif;
   font-size: 12px;
 }
 
