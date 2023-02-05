@@ -1,29 +1,3 @@
-@font-face {
-	font-family: 'YuGothic';
-	src: url(./font/YuGothicMedium.otf);
-}
-
-@font-face {
-	font-family: 'YuMincho';
-	src: url(./font/YuMincho.ttc);
-}
-
-body{
-  font-family: "YuMincho";
-	font-size: 15px;
-}
-
-.article{
-  width: 100%;
-}
-
-.section{
-  height: 100dvh;
-  width: 100%;
-  /* border-bottom: 5px solid gray; */
-}
-
-/* ////// */
 
 .section-01{
   display: flex;
@@ -50,10 +24,10 @@ body{
   width: 100%;
 }
 
-/* ///// */
+/* ////////////////////////////////////////////////////////////////////////// */
 
 .section-02{
-
+	margin-bottom: 150px;
 }
 
 .container-02{
@@ -75,7 +49,11 @@ body{
   max-width: 1000px;
 }
 
-/* ////// */
+/* ////////////////////////////////////////////////////////////////////////// */
+
+.section-03{
+	margin-bottom: 200px;
+}
 
 .container-03{
   height: 100%;
@@ -89,7 +67,11 @@ body{
 	object-fit: cover;
 }
 
-/* ////// */
+/* ////////////////////////////////////////////////////////////////////////// */
+
+.section-04{
+	margin-bottom: 250px;
+}
 
 .container-04-01{
 	height: 30%;
@@ -116,9 +98,11 @@ body{
 	width: 1000px;
 }
 
-/* ///////// */
+/* ////////////////////////////////////////////////////////////////////////// */
+
 .section-05{
 	display: flex;
+	margin-bottom: 400px;
 }
 
 .container-05-01{
@@ -146,7 +130,11 @@ body{
 	gap: 10px;
 }
 
-/* ///////	// */
+/* ////////////////////////////////////////////////////////////////////////// */
+
+.section-06{
+	margin-bottom: 250px;
+}
 
 .container-06{
 	height: 100%;
@@ -174,28 +162,32 @@ body{
 	gap: 10px;
 }
 
-/* ////// */
+/* ////////////////////////////////////////////////////////////////////////// */
 
 .section-07{
 	display: flex;
 	align-items: center;
+	margin-bottom: 250px;
+}
+
+.iframe-07{
+	width: 100%;
+	height: 80%;
 }
 
 .container-07{
-	height: 80%;
-	width: 100%;
+	height: 100dvh;
 }
 
 .image-07{
 	height: 100%;
-	width: 100%;
-	object-fit: cover;
 }
 
-/* ////// */
+/* ////////////////////////////////////////////////////////////////////////// */
 
 .section-08{
 	display: flex;
+	margin-bottom: 250px;
 }
 
 .container-08-01{
@@ -224,7 +216,7 @@ body{
 	object-fit: cover;
 }
 
-/* ////// */
+/* ////////////////////////////////////////////////////////////////////////// */
 
 .container-09-01{
 	height: 50%;
@@ -251,11 +243,12 @@ body{
 	max-width: 60%;
 }
 
-/* ////// */
+/* ////////////////////////////////////////////////////////////////////////// */
 
 .section-10{
 	display: flex;
-	justify-content: flex-end;
+	justify-content: flex-start;
+	margin-bottom: 150px;
 }
 
 .container-10{
@@ -269,7 +262,11 @@ body{
 	object-fit: cover;
 }
 
-/* ////// */
+/* ////////////////////////////////////////////////////////////////////////// */
+
+.section-11{
+	margin-bottom: 150px;
+}
 
 .container-11{
 	height: 100%;
@@ -283,7 +280,7 @@ body{
 	max-width: 60%;
 }
 
-/* ////// */
+/* ////////////////////////////////////////////////////////////////////////// */
 
 .section-12{
 	display: flex;
@@ -332,7 +329,7 @@ body{
 	flex-direction:column;
 }
 
-/* ////// */
+/* ////////////////////////////////////////////////////////////////////////// */
 
 .section-13{
 	display: flex;

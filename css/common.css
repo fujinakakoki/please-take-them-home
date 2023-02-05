@@ -1,0 +1,27 @@
+@font-face {
+	font-family: 'YuGothic';
+	src: url(./font/YuGothicMedium.otf);
+}
+
+@font-face {
+	font-family: 'YuMincho';
+	src: url(./font/YuMincho.ttc);
+}
+
+body{
+  font-family: "YuMincho";
+	font-size: 15px;
+}
+
+.article{
+  width: 100%;
+}
+
+.section{
+  height: 100dvh;
+  width: 100%;
+  /* border-bottom: 5px solid gray; */
+}
+
+@media screen and (max-width:480px) {
+}
