@@ -1,15 +1,15 @@
 @font-face {
-  font-family: 'YuGothic';
+  font-family: 'MyYuGothic';
   src: url(./font/YuGothicMedium.otf);
 }
 
 @font-face {
-  font-family: 'YuMincho';
+  font-family: 'MyYuMincho';
   src: url(./font/YuMincho.ttc);
 }
 
 body {
-  font-family: "YuMincho", "游明朝体", serif;
+  font-family: "MyYuMincho", "游明朝体", serif;
   font-size: 15px;
   line-height: 30px;
   /* width: 1280px; */
@@ -66,8 +66,9 @@ body {
 
 .footer-text {
   width: 80%;
-  font-family: "YuGothic", "游ゴシック体", sans-serif;
+  font-family: "MyYuGothic", "游ゴシック体", sans-serif;
   font-size: 10px;
+  font-weight: 100;
   line-height: 15px;
 }
 

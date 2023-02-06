@@ -16,10 +16,8 @@ let scrollButton = document.getElementById("section-button")
 
 let flag = true;
 
-
 scrollButton.addEventListener("click", function () {
     let nowHeight = document.documentElement.scrollTop;
-    // let nowHeight = window.pageXOffset;
 
     if (flag) {
         flag = false;
@@ -94,12 +92,6 @@ scrollButton.addEventListener("click", function () {
                     behavior: 'smooth'
                 });
                 break;
-            // case nowHeight < section12:
-            //     window.scroll({
-            //         top: section12,
-            //         behavior: 'smooth'
-            //     });
-            //     break;
             default:
                 window.scroll({
                     top: section12,

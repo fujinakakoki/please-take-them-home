@@ -8,14 +8,14 @@
 }
 
 .text-01{
-	font-size: 19px;
+	font-size: 20px;
 	font-weight: 700;
 	margin-bottom: 50px;
-	padding-left: 6px;
+	padding-left: 8px;
 }
 
 .image-01{
-	width: 180px;
+	width: 185px;
 }
 
 /* ////////////////////////////////////////////////////////////////////////// */
@@ -205,7 +205,7 @@
 	}
 
 	.inner-content-wrapper-06{
-		margin-top: 150px;
+		margin-top: 20px;
 	}
 
 	.inner-content-06{
