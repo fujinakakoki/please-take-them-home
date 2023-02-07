@@ -76,7 +76,7 @@ body {
   display: none;
 }
 
-@media screen and (max-width: 768px),
+@media screen and (max-width: 960px),
 screen and (orientation: portrait) {
   .section {
     grid-template-columns: 5% 45% 45% 5%;

@@ -257,12 +257,9 @@ screen and (orientation: portrait) {
 	height: 100%;
 }
 
-@media screen and (width <=670px) and
-(orientation: portrait) {
+@media screen and (max-width :670px) {
 	.iframe-07 {
 		height: 350px;
-		max-height: 100dvh;
-		width: 100%;
 	}
 }
 
