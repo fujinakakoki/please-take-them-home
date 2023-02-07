@@ -27,7 +27,13 @@ body {
 
 .section-button {
   font-size: 50px;
-  opacity: 0.7;
+  opacity: 0.6;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+}
+
+.hide{
+  opacity: 0;
 }
 
 .section-button:hover {

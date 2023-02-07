@@ -1,10 +1,42 @@
 
+let getId = (id) => {
+    return document.getElementById(id);
+}
+
+let getOffsetTop = (element) => {
+    return Math.floor(element.offsetTop);
+}
+
+let getOffsetBottom = (element) => {
+    return Math.floor(element.offsetBottom);
+}
+
+let getScrollHeight = (id, windowHeight) => {
+    let element = getId(id);
+    console.log(element);
+    let elementOffsetTop = getOffsetTop(element);
+    console.log(elementOffsetTop);
+    let elementHeight = element.offsetHeight;
+    console.log(elementHeight)
+
+    console.log(elementHeight)
+
+    if (windowHeight > elementHeight) {
+        return elementOffsetTop - ((windowHeight - elementHeight) / 2)
+    }
+    return elementOffsetTop;
+}
+
 let scrollButton = document.getElementById("section-button")
+let footerElement = getId("footer");
+let deviceHeight = window.innerHeight;
+let deviceWidth = window.innerWidth;
+
+///////////////////////////////////////////////////////////////////////
+// セクション移動処理
 
 scrollButton.addEventListener("click", function () {
-
-    let deviceHeight = window.innerHeight;
-    let deviceWidth = window.innerWidth;
+    
     let nowHeight = document.documentElement.scrollTop;
 
     switch (true) {
@@ -76,37 +108,27 @@ scrollButton.addEventListener("click", function () {
             break;
         default:
             window.scroll({
-                top: getScrollHeight("section-12", deviceHeight) + getId("footer").offsetHeight,
+                top: getScrollHeight("section-12", deviceHeight) + footerElement.offsetHeight,
                 behavior: 'smooth'
             });
             break;
     }
 })
 
-let getId = (id) => {
-    return document.getElementById(id);
-}
+///////////////////////////////////////////////
+// 最下部でボタン非表示処理
 
-let getOffsetTop = (element) => {
-    return Math.floor(element.offsetTop);
-}
-
-let getOffsetBottom = (element) => {
-    return Math.floor(element.offsetBottom);
-}
-
-let getScrollHeight = (id, windowHeight) => {
-    let element = getId(id);
-    console.log(element);
-    let elementOffsetTop = getOffsetTop(element);
-    console.log(elementOffsetTop);
-    let elementHeight = element.offsetHeight;
-    console.log(elementHeight)
-
-    console.log(elementHeight)
-
-    if (windowHeight > elementHeight) {
-        return elementOffsetTop - ((windowHeight - elementHeight) / 2)
-    }
-    return elementOffsetTop;
-}
+const allHeight = Math.max(
+    document.body.scrollHeight, document.documentElement.scrollHeight,
+    document.body.offsetHeight, document.documentElement.offsetHeight,
+    document.body.clientHeight, document.documentElement.clientHeight
+  );
+  const mostBottom = allHeight - window.innerHeight;
+  window.addEventListener('scroll', ()=> {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop >= mostBottom) {
+          scrollButton.classList.add("hide")
+      }else{
+        scrollButton.classList.remove("hide")
+      }
+  });
