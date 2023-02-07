@@ -4,7 +4,7 @@ let scrollButton = document.getElementById("section-button")
 scrollButton.addEventListener("click", function () {
 
     let deviceHeight = window.innerHeight;
-
+    let deviceWidth = window.innerWidth;
     let nowHeight = document.documentElement.scrollTop;
 
     switch (true) {
@@ -32,7 +32,7 @@ scrollButton.addEventListener("click", function () {
                 behavior: 'smooth'
             });
             break;
-        case nowHeight <= (getOffsetTop(getId("section-05")) + 2):
+        case nowHeight <= (getOffsetTop(getId("section-05")) + 2) && deviceWidth <= 960:
             window.scroll({
                 top: getScrollHeight("section-05", deviceHeight) + (getId("section-05").offsetHeight - deviceHeight),
                 behavior: 'smooth'
