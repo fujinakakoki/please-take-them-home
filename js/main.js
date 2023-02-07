@@ -26,7 +26,7 @@ scrollButton.addEventListener("click", function () {
                 behavior: 'smooth'
             });
             break;
-        case nowHeight  < getOffsetTop(getId("section-05")):
+        case nowHeight < getOffsetTop(getId("section-05")):
             window.scroll({
                 top: getScrollHeight("section-05", deviceHeight),
                 behavior: 'smooth'
@@ -76,7 +76,7 @@ scrollButton.addEventListener("click", function () {
             break;
         default:
             window.scroll({
-                top: getScrollHeight("section-12", deviceHeight),
+                top: getScrollHeight("section-12", deviceHeight) + getId("footer").offsetHeight,
                 behavior: 'smooth'
             });
             break;
