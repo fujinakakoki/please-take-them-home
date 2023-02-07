@@ -1,22 +1,22 @@
 
-let section01 = Math.floor(document.getElementById("section-01").getBoundingClientRect().top + document.documentElement.scrollTop);
-let section02 = Math.floor(document.getElementById("section-02").getBoundingClientRect().top + document.documentElement.scrollTop);
-let section03 = Math.floor(document.getElementById("section-03").getBoundingClientRect().top + document.documentElement.scrollTop);
-let section04 = Math.floor(document.getElementById("section-04").getBoundingClientRect().top + document.documentElement.scrollTop);
-let section05 = Math.floor(document.getElementById("section-05").getBoundingClientRect().top + document.documentElement.scrollTop);
-let section06 = Math.floor(document.getElementById("section-06").getBoundingClientRect().top + document.documentElement.scrollTop);
-let section07 = Math.floor(document.getElementById("section-07").getBoundingClientRect().top + document.documentElement.scrollTop);
-let section08 = Math.floor(document.getElementById("section-08").getBoundingClientRect().top + document.documentElement.scrollTop)
-let section09 = Math.floor(document.getElementById("section-09").getBoundingClientRect().top + document.documentElement.scrollTop)
-let section10 = Math.floor(document.getElementById("section-10").getBoundingClientRect().top + document.documentElement.scrollTop)
-let section11 = Math.floor(document.getElementById("section-11").getBoundingClientRect().top + document.documentElement.scrollTop)
-let section12 = Math.floor(document.getElementById("section-12").getBoundingClientRect().top + document.documentElement.scrollTop)
-
 let scrollButton = document.getElementById("section-button")
 
 let flag = true;
 
 scrollButton.addEventListener("click", function () {
+
+    let section02 = Math.floor(document.getElementById("section-02").offsetTop);
+    let section03 = Math.floor(document.getElementById("section-03").offsetTop);
+    let section04 = Math.floor(document.getElementById("section-04").offsetTop);
+    let section05 = Math.floor(document.getElementById("section-05").offsetTop);
+    let section06 = Math.floor(document.getElementById("section-06").offsetTop);
+    let section07 = Math.floor(document.getElementById("section-07").offsetTop);
+    let section08 = Math.floor(document.getElementById("section-08").offsetTop);
+    let section09 = Math.floor(document.getElementById("section-09").offsetTop);
+    let section10 = Math.floor(document.getElementById("section-10").offsetTop);
+    let section11 = Math.floor(document.getElementById("section-11").offsetTop);
+    let section12 = Math.floor(document.getElementById("section-12").offsetTop);
+
     let nowHeight = document.documentElement.scrollTop;
 
     if (flag) {
@@ -27,40 +27,40 @@ scrollButton.addEventListener("click", function () {
                     top: section02,
                     behavior: 'smooth'
                 });
-                // console.log("now"+nowHeight)
-                // console.log("02"+section02);
+                // console.log("now" + nowHeight)
+                // console.log("02: " + section02);
                 break;
             case nowHeight < section03:
                 window.scroll({
                     top: section03,
                     behavior: 'smooth'
                 });
-                // console.log("now"+nowHeight)
-                // console.log("03"+section03);
+                // console.log("now" + nowHeight)
+                // console.log("03: " + section03);
                 break;
             case nowHeight < section04:
                 window.scroll({
                     top: section04,
                     behavior: 'smooth'
                 });
-                // console.log("now"+nowHeight)
-                // console.log("04"+section04)
+                // console.log("now" + nowHeight)
+                // console.log("04: " + section04)
                 break;
             case nowHeight < section05:
                 window.scroll({
                     top: section05,
                     behavior: 'smooth'
                 });
-                // console.log("now"+nowHeight)
-                // console.log("05"+section05)
+                // console.log("now" + nowHeight)
+                // console.log("05: " + section05)
                 break;
             case nowHeight < section06:
                 window.scroll({
                     top: section06,
                     behavior: 'smooth'
                 });
-                // console.log("now"+nowHeight)
-                // console.log(section06)
+                // console.log("now" + nowHeight)
+                // console.log("05: " + section06)
                 break;
             case nowHeight < section07:
                 window.scroll({
