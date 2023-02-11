@@ -3,6 +3,7 @@
 ///////// 定数
 
 const scrollSpeed = 1000;
+const autoSwipeSpeed = 6000;
 const maxSpWidth = 960;
 
 ///////// 変数
@@ -23,11 +24,8 @@ let windowHeight,
     section09_position,
     section10_position,
     section11_position,
-    section12_position;
-
-$(window).on("load", ()=>{
-    window.scrollTo(0,1);
-})
+    section12_position,
+    moveSize;
 
 $(window).on("load resize", () => {
     windowHeight = Math.floor( $(window).height());
@@ -52,6 +50,9 @@ $(window).on("load resize", () => {
     }
     if ($("#section-07").length) {
         section07_position = Math.floor($("#section-07").offset().top);
+    }
+    if( $(".image-07").length){
+        moveSize = $(".image-07").width() - windowWidth;
     }
     if ($("#section-08").length) {
         section08_position = Math.floor($("#section-08").offset().top);
@@ -97,6 +98,7 @@ $("#body").on("click",() => {
             break;
         case nowPosition < section07_position:
             $("html").animate({ scrollTop: section07_position }, scrollSpeed, "swing");
+            $(".image-07").animate({"right": -moveSize + "px"})
             break;
         case nowPosition < section08_position_bottom - windowHeight:
             $("html").animate({ scrollTop: section08_position_bottom - windowHeight }, scrollSpeed, "swing");

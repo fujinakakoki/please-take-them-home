@@ -81,7 +81,7 @@ screen and (orientation: portrait) {
 }
 
 .image-03 {
-	max-height: 100lvh;
+	max-height: 100dvh;
 	max-width: 100%;
 }
 
@@ -132,7 +132,7 @@ screen and (orientation: portrait) {
 screen and (orientation: portrait) {
 	.section-04 {
 		height: fit-content;
-		min-height: 100lvh;
+		min-height: 100dvh;
 		margin-bottom: 250px;
 	}
 
@@ -172,7 +172,7 @@ screen and (orientation: portrait) {
 }
 
 .image-05 {
-	height: 100lvh;
+	height: 100dvh;
 }
 
 .container-05-02 {
@@ -219,7 +219,7 @@ screen and (orientation: portrait) {
 }
 
 .image-06 {
-	max-height: 83lvh;
+	max-height: 83dvh;
 	max-width: 100%;
 }
 
@@ -283,22 +283,26 @@ screen and (orientation: portrait) {
 screen and (orientation: portrait) {
 	.inner-content-07 {
 		height: 650px;
-		max-height: 100lvh;
+		max-height: 100dvh;
 		width: 100%;
-		display: flex;
-		justify-content: flex-start;
+		/* display: flex;
+		justify-content: flex-end; */
+		position: relative;
 		overflow: scroll;
 		background-color: lightgray;
 		scrollbar-color: gray lightgray;
 		scrollbar-width: auto;
 	}
+
 	.inner-content-07::-webkit-scrollbar{
 		height: 10px;
 		width: 0;
 	}
+
 	.inner-content-07::-webkit-scrollbar-track{
 		background-color:gray;
 	}
+
 	.inner-content-07::-webkit-scrollbar-thumb{
 		background-color:lightgray;
 		border-radius: 5px;
@@ -307,6 +311,12 @@ screen and (orientation: portrait) {
 	.image-07 {
 		height: 100%;
 		width: auto;
+		position: absolute;
+		top:0; 
+		right: 0;
+		transition-delay: 1500ms;
+		transition-duration: 6000ms;
+		transition-timing-function: linear;
 	}
 }
 
@@ -473,12 +483,12 @@ screen and (orientation: portrait) {
 
 .section-12 {
 	min-height: 750px;
-	grid-template-rows: 33% 34% 33%;
+	grid-template-rows: 1fr auto;
 }
 
 .container-12 {
 	grid-column: 2 / 4;
-	grid-row: 2 / 3;
+	grid-row: 1 / 2;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -494,13 +504,35 @@ screen and (orientation: portrait) {
 	width: 80%;
 }
 
+
+.footer {
+	grid-column: 2 / 4;
+	grid-row: 2 / 3;
+  }
+  
+  .footer-container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-bottom: 20px;
+  }
+  
+  .footer-text {
+	width: 80%;
+	font-family: "MyYuGothic", "游ゴシック体", sans-serif;
+	font-size: 10px;
+	font-weight: 100;
+	line-height: 15px;
+  }
+
 @media screen and (max-width: 960px),
 screen and (orientation: portrait) {
-	.section-12 {
-		height: fit-content;
-	}
-
 	.inner-content-12 {
 		width: 100%;
 	}
+	
+	  .footer-text {
+		width: 100%;
+	  }
 }
