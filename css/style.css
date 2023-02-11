@@ -17,7 +17,7 @@
 	width: 185px;
 }
 
-.announce-01{
+.announce-01 {
 	position: absolute;
 	bottom: 40px;
 	width: 100%;
@@ -25,7 +25,7 @@
 	justify-content: center;
 }
 
-.announce-text-01{
+.announce-text-01 {
 	font-size: 16px;
 }
 
@@ -81,7 +81,7 @@ screen and (orientation: portrait) {
 }
 
 .image-03 {
-	max-height: 100dvh;
+	max-height: 100lvh;
 	max-width: 100%;
 }
 
@@ -131,16 +131,29 @@ screen and (orientation: portrait) {
 @media screen and (max-width: 960px),
 screen and (orientation: portrait) {
 	.section-04 {
-		min-height: fit-content;
+		height: fit-content;
+		min-height: 100lvh;
 		margin-bottom: 250px;
 	}
 
 	.container-04 {
 		grid-column: 1 / 5;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.inner-content-04-01 {
+		height: fit-content;
 	}
 
 	.image-04-01 {
 		width: 100%;
+	}
+
+	.inner-content-04-02 {
+		height: fit-content;
 	}
 }
 
@@ -159,7 +172,7 @@ screen and (orientation: portrait) {
 }
 
 .image-05 {
-	height: 100dvh;
+	height: 100lvh;
 }
 
 .container-05-02 {
@@ -210,7 +223,7 @@ screen and (orientation: portrait) {
 }
 
 .image-06 {
-	max-height: 83dvh;
+	max-height: 83lvh;
 	max-width: 100%;
 }
 
@@ -264,43 +277,32 @@ screen and (orientation: portrait) {
 	object-fit: cover;
 }
 
-.iframe-07 {
-	height: 650px;
-	max-height: 100dvh;
-	width: 100%;
-	
-}
-
-.announce-text-07{
+.announce-text-07 {
 	width: 100%;
 	padding-right: 5px;
 	text-align: end;
 }
 
-.iframe-content-07 {
-	height: 100dvh;
-	overflow-y: hidden;
-}
+@media screen and (max-width: 960px),
+screen and (orientation: portrait) {
+	.inner-content-07 {
+		height: 650px;
+		max-height: 100lvh;
+		width: 100%;
+		display: flex;
+		justify-content: flex-start;
+		overflow: scroll;
+		background-color: lightgray;
+	}
 
-.iframe-content-07::-webkit-scrollbar {
-    height: 10px;
-}
- 
-.iframe-content-07::-webkit-scrollbar-track {
-    background-color: lightgray;
-}
- 
-.iframe-content-07::-webkit-scrollbar-thumb {
-	background-color: gray;
-	border-radius: 5px;
-}
-
-.iframe-image-07 {
-	height: 100%;
+	.image-07 {
+		height: 100%;
+		width: auto;
+	}
 }
 
 @media screen and (max-width :670px) {
-	.iframe-07 {
+	.inner-content-07 {
 		height: 350px;
 	}
 }
@@ -421,6 +423,7 @@ screen and (orientation: portrait) {
 @media screen and (max-width: 960px),
 screen and (orientation: portrait) {
 	.section-10 {
+		height: fit-content;
 		margin-bottom: 50px;
 	}
 
@@ -485,8 +488,7 @@ screen and (orientation: portrait) {
 @media screen and (max-width: 960px),
 screen and (orientation: portrait) {
 	.section-12 {
-		min-height: fit-content;
-		margin-bottom: 100px;
+		height: fit-content;
 	}
 
 	.inner-content-12 {

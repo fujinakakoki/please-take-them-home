@@ -3,6 +3,7 @@
 ///////// 定数
 
 const scrollSpeed = 1000;
+const maxSpWidth = 960;
 
 ///////// 変数
 
@@ -24,11 +25,15 @@ let windowHeight,
     section11_position,
     section12_position;
 
-$(window).on("resize load", () => {
-    windowHeight = Math.floor($(window).height());
-    windowWidth = Math.floor($(window).width());
+$(window).on("load", ()=>{
+    window.scrollTo(0,1);
+})
+
+$(window).on("load resize", () => {
+    windowHeight = Math.floor( $(window).height());
+    windowWidth = Math.floor( $(window).width());
     pageBottom = Math.floor($("html").height());
-    isSp = windowWidth < 960;
+    isSp = windowWidth <= maxSpWidth;
     if ($("#section-02").length) {
         section02_position = Math.floor($("#section-02").offset().top);
     }
@@ -40,8 +45,6 @@ $(window).on("resize load", () => {
     }
     if ($("#section-05").length) {
         section05_position = Math.floor($("#section-05").offset().top);
-    }
-    if ($("#section-05").length) {
         section05_position_bottom = Math.floor($("#section-05").offset().top + $("#section-05").height());
     }
     if ($("#section-06").length) {
@@ -52,8 +55,6 @@ $(window).on("resize load", () => {
     }
     if ($("#section-08").length) {
         section08_position = Math.floor($("#section-08").offset().top);
-    }
-    if ($("#section-08").length) {
         section08_position_bottom = Math.floor($("#section-08").offset().top + $("#section-08").height());
     }
     if ($("#section-09").length) {
@@ -70,49 +71,45 @@ $(window).on("resize load", () => {
     }
 });
 
-// $(window).on("resize", () => {
-//     location.reload();
-// });
-
 //// スクロール処理
 
-$("#body").click(() => {
+$("#body").on("click",() => {
     let nowPosition = $(window).scrollTop();
 
     switch (true) {
-        case nowPosition + (windowHeight / 2) < section02_position:
+        case nowPosition < section02_position:
             $("html").animate({ scrollTop: section02_position }, scrollSpeed, "swing");
             break;
-        case nowPosition + (windowHeight / 2) < section03_position:
+        case nowPosition < section03_position:
             $("html").animate({ scrollTop: section03_position }, scrollSpeed, "swing");
             break;
-        case nowPosition + (windowHeight / 2) < section04_position:
+        case nowPosition < section04_position:
             $("html").animate({ scrollTop: section04_position }, scrollSpeed, "swing");
             break;
-        case nowPosition + (windowHeight / 2) < section05_position:
+        case nowPosition < section05_position:
             $("html").animate({ scrollTop: section05_position }, scrollSpeed, "swing");
             break;
-        case nowPosition <= section05_position + 2 && windowWidth <= 960:
+        case nowPosition < section05_position_bottom - windowHeight && isSp:
             $("html").animate({ scrollTop: section05_position_bottom - windowHeight }, scrollSpeed, "swing");
             break;
-        case nowPosition + (windowHeight / 2) < section06_position:
+        case nowPosition < section06_position:
             $("html").animate({ scrollTop: section06_position }, scrollSpeed, "swing");
             break;
-        case nowPosition + (windowHeight / 2) < section07_position:
+        case nowPosition < section07_position:
             $("html").animate({ scrollTop: section07_position }, scrollSpeed, "swing");
             break;
-        case nowPosition + (windowHeight / 2) < section08_position:
+        case nowPosition < section08_position_bottom - windowHeight:
             $("html").animate({ scrollTop: section08_position_bottom - windowHeight }, scrollSpeed, "swing");
             break;
         case nowPosition + (windowHeight / 2) < section09_position:
-            if(isSp){
-                $("html").animate({ scrollTop: section09_position - ((windowHeight - $("#section-09").height()) / 2 - 100)}, scrollSpeed, "swing");
-            }else{
+            if (isSp) {
+                $("html").animate({ scrollTop: section09_position - ((windowHeight - $("#section-09").height()) / 2 - 100) }, scrollSpeed, "swing");
+            } else {
                 $("html").animate({ scrollTop: section09_position }, scrollSpeed, "swing");
             }
             break;
         case nowPosition + (windowHeight / 2) < section10_position:
-            $("html").animate({ scrollTop: section10_position }, scrollSpeed, "swing");
+            $("html").animate({ scrollTop: section10_position + (($("#section-10").height() - windowHeight) / 2) }, scrollSpeed, "swing");
             break;
         case nowPosition + (windowHeight / 2) < section11_position:
             $("html").animate({ scrollTop: section11_position }, scrollSpeed, "swing");
@@ -122,6 +119,3 @@ $("#body").click(() => {
             break;
     }
 });
-
-
-///////

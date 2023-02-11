@@ -45,86 +45,85 @@ $("#body").click(()=>{
     $("#body").animate({"scrollTop": position}, speed, "swing");
 });
 
-// scrollButton.addEventListener("click", function () {
+scrollButton.addEventListener("click", function () {
     
-//     let nowHeight = document.documentElement.scrollTop;
+    let nowHeight = document.documentElement.scrollTop;
 
-//     switch (true) {
-//         case nowHeight + (deviceHeight / 2) < getOffsetTop(getId("section-02")):
-//             // window.scroll({
-//             //     top: getScrollHeight("section-02", deviceHeight),
-//             //     behavior: 'smooth'
-//             // });
-//             $("body","html").animate({"scrollTop":getScrollHeight("section-02", deviceHeight)},speed, "swing");
-//             break;
-//         case nowHeight + (deviceHeight / 2) < getOffsetTop(getId("section-03")):
-//             window.scroll({
-//                 top: getScrollHeight("section-03", deviceHeight),
-//                 behavior: 'smooth'
-//             });
-//             break;
-//         case nowHeight + (deviceHeight / 2) < getOffsetTop(getId("section-04")):
-//             window.scroll({
-//                 top: getScrollHeight("section-04", deviceHeight),
-//                 behavior: 'smooth'
-//             });
-//             break;
-//         case nowHeight < getOffsetTop(getId("section-05")):
-//             window.scroll({
-//                 top: getScrollHeight("section-05", deviceHeight),
-//                 behavior: 'smooth'
-//             });
-//             break;
-//         case nowHeight <= (getOffsetTop(getId("section-05")) + 2) && deviceWidth <= 960:
-//             window.scroll({
-//                 top: getScrollHeight("section-05", deviceHeight) + (getId("section-05").offsetHeight - deviceHeight),
-//                 behavior: 'smooth'
-//             });
-//             break;
-//         case nowHeight < getOffsetTop(getId("section-06")):
-//             window.scroll({
-//                 top: getScrollHeight("section-06", deviceHeight),
-//                 behavior: 'smooth'
-//             });
-//             break;
-//         case nowHeight + (deviceHeight / 2) < getOffsetTop(getId("section-07")):
-//             window.scroll({
-//                 top: getScrollHeight("section-07", deviceHeight),
-//                 behavior: 'smooth'
-//             });
-//             break;
-//         case nowHeight + (deviceHeight / 2) < getOffsetTop(getId("section-08")):
-//             window.scroll({
-//                 top: getScrollHeight("section-08", deviceHeight),
-//                 behavior: 'smooth'
-//             });
-//             break;
-//         case nowHeight + (deviceHeight / 2) < getOffsetTop(getId("section-09")):
-//             window.scroll({
-//                 top: getScrollHeight("section-09", deviceHeight),
-//                 behavior: 'smooth'
-//             });
-//             break;
-//         case nowHeight + (deviceHeight / 2) < getOffsetTop(getId("section-10")):
-//             window.scroll({
-//                 top: getScrollHeight("section-10", deviceHeight),
-//                 behavior: 'smooth'
-//             });
-//             break;
-//         case nowHeight + (deviceHeight / 2) < getOffsetTop(getId("section-11")):
-//             window.scroll({
-//                 top: getScrollHeight("section-11", deviceHeight),
-//                 behavior: 'smooth'
-//             });
-//             break;
-//         default:
-//             window.scroll({
-//                 top: getScrollHeight("section-12", deviceHeight) + footerElement.offsetHeight,
-//                 behavior: 'smooth'
-//             });
-//             break;
-//     }
-// })
+    switch (true) {
+        case nowHeight + (deviceHeight / 2) < getOffsetTop(getId("section-02")):
+            window.scroll({
+                top: getScrollHeight("section-02", deviceHeight),
+                behavior: 'smooth'
+            });
+            break;
+        case nowHeight + (deviceHeight / 2) < getOffsetTop(getId("section-03")):
+            window.scroll({
+                top: getScrollHeight("section-03", deviceHeight),
+                behavior: 'smooth'
+            });
+            break;
+        case nowHeight + (deviceHeight / 2) < getOffsetTop(getId("section-04")):
+            window.scroll({
+                top: getScrollHeight("section-04", deviceHeight),
+                behavior: 'smooth'
+            });
+            break;
+        case nowHeight < getOffsetTop(getId("section-05")):
+            window.scroll({
+                top: getScrollHeight("section-05", deviceHeight),
+                behavior: 'smooth'
+            });
+            break;
+        case nowHeight <= (getOffsetTop(getId("section-05")) + 2) && deviceWidth <= 960:
+            window.scroll({
+                top: getScrollHeight("section-05", deviceHeight) + (getId("section-05").offsetHeight - deviceHeight),
+                behavior: 'smooth'
+            });
+            break;
+        case nowHeight < getOffsetTop(getId("section-06")):
+            window.scroll({
+                top: getScrollHeight("section-06", deviceHeight),
+                behavior: 'smooth'
+            });
+            break;
+        case nowHeight + (deviceHeight / 2) < getOffsetTop(getId("section-07")):
+            window.scroll({
+                top: getScrollHeight("section-07", deviceHeight),
+                behavior: 'smooth'
+            });
+            break;
+        case nowHeight + (deviceHeight / 2) < getOffsetTop(getId("section-08")):
+            window.scroll({
+                top: getScrollHeight("section-08", deviceHeight),
+                behavior: 'smooth'
+            });
+            break;
+        case nowHeight + (deviceHeight / 2) < getOffsetTop(getId("section-09")):
+            window.scroll({
+                top: getScrollHeight("section-09", deviceHeight),
+                behavior: 'smooth'
+            });
+            break;
+        case nowHeight + (deviceHeight / 2) < getOffsetTop(getId("section-10")):
+            window.scroll({
+                top: getScrollHeight("section-10", deviceHeight),
+                behavior: 'smooth'
+            });
+            break;
+        case nowHeight + (deviceHeight / 2) < getOffsetTop(getId("section-11")):
+            window.scroll({
+                top: getScrollHeight("section-11", deviceHeight),
+                behavior: 'smooth'
+            });
+            break;
+        default:
+            window.scroll({
+                top: getScrollHeight("section-12", deviceHeight) + footerElement.offsetHeight,
+                behavior: 'smooth'
+            });
+            break;
+    }
+})
 
 ///////////////////////////////////////////////
 // 最下部でボタン非表示処理
