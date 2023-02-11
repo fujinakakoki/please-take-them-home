@@ -186,10 +186,6 @@ screen and (orientation: portrait) {
 
 @media screen and (max-width: 960px),
 screen and (orientation: portrait) {
-	.section-05 {
-		min-height: fit-content;
-	}
-
 	.container-05-01 {
 		grid-column: 1 / 5;
 		justify-content: flex-start;
