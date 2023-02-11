@@ -7,7 +7,6 @@
   <link rel="icon" type="image/png" href="./image/icon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <!-- <meta name="viewport" content="width=device-width, shrink-to-fit=yes, user-scalable=no, initial-scale=1.0," /> -->
   <meta name="robots" content="noindex,nofollow" />
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/style.css">
@@ -16,7 +15,7 @@
   <title>お持ち帰りください。</title>
 </head>
 
-<body>
+<body id="body">
   <main>
     <article class="article">
       <!-- ページ01 -->
@@ -24,6 +23,10 @@
         <div class="container-01">
           <p class="text-01">お持ち帰りください。</p>
           <img loading="lazy" class="image-01" src="./image/image_01.png" alt="image-01">
+        </div>
+        <div class="announce-01">
+          <p class="announce-text-01 pc">(画面のタップ or クリックで進みます)</p>
+          <p class="announce-text-01 sp">(画面のタップで進みます)</p>
         </div>
       </section>
       <!-- ページ02 -->
@@ -88,6 +91,7 @@
             <img loading="lazy" class="image-07" src="./image/image_07.png" alt="image-07">
           </div>
           <iframe class="iframe-07 sp" src="./section_07.html" frameborder="0" scrolling="yes"></iframe>
+          <p class="announce-text-07 sp">画像をスクロール >>></p>
         </div>
       </section>
       <!-- ページ08 -->
@@ -150,13 +154,9 @@
           <p class="footer-text sp">木の棒 , プリッツ , 小屋 | h2850 x w3950 x d3650</p>
         </div>
       </footer>
-
-      <div class="section-button-wrapper">
-        <button id="section-button" class="section-button"><i class="fa-solid fa-angles-down"></i></button>
-      </div>
-
     </article>
   </main>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js "></script>
   <script type="text/javascript" src="./js/main.js"></script>
 </body>
 

@@ -17,6 +17,18 @@
 	width: 185px;
 }
 
+.announce-01{
+	position: absolute;
+	bottom: 40px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.announce-text-01{
+	font-size: 16px;
+}
+
 /* ////////////////////////////////////////////////////////////////////////// */
 
 .section-02 {
@@ -64,11 +76,13 @@ screen and (orientation: portrait) {
 .container-03 {
 	grid-column: 1 / 5;
 	display: flex;
-	align-items: flex-end;
+	justify-content: center;
+	align-items: center;
 }
 
 .image-03 {
-	width: 100%;
+	max-height: 100dvh;
+	max-width: 100%;
 }
 
 @media screen and (max-width: 960px),
@@ -134,6 +148,7 @@ screen and (orientation: portrait) {
 /* ////////////////////////////////////////////////////////////////////////// */
 
 .section-05 {
+	height: fit-content;
 	margin-bottom: 300px;
 }
 
@@ -186,16 +201,21 @@ screen and (orientation: portrait) {
 }
 
 .container-06 {
+	height: 100%;
 	grid-column: 2 / 4;
-	grid-template-rows: auto 1fr;
+	display: flex;
+	flex-direction: column;
 	justify-content: center;
+	align-items: center;
 }
 
 .image-06 {
-	width: 100%;
+	max-height: 83dvh;
+	max-width: 100%;
 }
 
 .inner-content-wrapper-06 {
+	height: 13%;
 	min-height: 150px;
 	display: flex;
 	justify-content: center;
@@ -230,6 +250,7 @@ screen and (orientation: portrait) {
 .container-07 {
 	grid-column: 1 / 5;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
@@ -247,10 +268,31 @@ screen and (orientation: portrait) {
 	height: 650px;
 	max-height: 100dvh;
 	width: 100%;
+	
+}
+
+.announce-text-07{
+	width: 100%;
+	padding-right: 5px;
+	text-align: end;
 }
 
 .iframe-content-07 {
 	height: 100dvh;
+	overflow-y: hidden;
+}
+
+.iframe-content-07::-webkit-scrollbar {
+    height: 10px;
+}
+ 
+.iframe-content-07::-webkit-scrollbar-track {
+    background-color: lightgray;
+}
+ 
+.iframe-content-07::-webkit-scrollbar-thumb {
+	background-color: gray;
+	border-radius: 5px;
 }
 
 .iframe-image-07 {
@@ -340,8 +382,8 @@ screen and (orientation: portrait) {
 @media screen and (max-width: 960px),
 screen and (orientation: portrait) {
 	.section-09 {
-		min-height: fit-content;
-		margin-bottom: 100px;
+		height: fit-content;
+		margin-bottom: 300px;
 	}
 
 	.container-09-01 {
