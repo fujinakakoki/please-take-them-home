@@ -289,6 +289,19 @@ screen and (orientation: portrait) {
 		justify-content: flex-start;
 		overflow: scroll;
 		background-color: lightgray;
+		scrollbar-color: gray lightgray;
+		scrollbar-width: auto;
+	}
+	.inner-content-07::-webkit-scrollbar{
+		height: 10px;
+		width: 0;
+	}
+	.inner-content-07::-webkit-scrollbar-track{
+		background-color:gray;
+	}
+	.inner-content-07::-webkit-scrollbar-thumb{
+		background-color:lightgray;
+		border-radius: 5px;
 	}
 
 	.image-07 {
