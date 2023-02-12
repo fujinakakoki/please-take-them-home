@@ -46,8 +46,8 @@ body {
 .section {
   height: 100dvh;
   width: 100%;
-  border-top: 1px solid green;
-  border-bottom: 1px solid red;
+  /* border-top: 1px solid green;
+  border-bottom: 1px solid red; */
   display: grid;
   grid-template-columns: 10% 40% 40% 10%;
 }
