@@ -121,7 +121,6 @@ screen and (orientation: portrait) {
 
 .inner-content-04-02 {
 	grid-row: 2 / 3;
-	max-height: inherit;
 	width: 100%;
 	display: flex;
 	justify-content: flex-end;
@@ -129,9 +128,8 @@ screen and (orientation: portrait) {
 }
 
 .image-04-02 {
-	max-height: inherit;
 	max-width: 100%;
-	object-fit: cover;
+	max-height: 65dvh;
 }
 
 @media screen and (max-width: 960px),
@@ -160,6 +158,11 @@ screen and (orientation: portrait) {
 
 	.inner-content-04-02 {
 		height: fit-content;
+	}
+
+	.image-04-02 {
+		width: 100%;
+		max-height: auto;
 	}
 }
 
