@@ -101,7 +101,6 @@ screen and (orientation: portrait) {
 }
 
 .container-04 {
-	height: inherit;
 	grid-column: 2 / 4;
 	display: grid;
 	grid-template-rows: 1fr auto;
