@@ -17,6 +17,24 @@ body {
   box-sizing: border-box;
 }
 
+.loading{
+  position: fixed;
+  height: 100dvh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.9);
+  transition-duration: 500ms;
+  transition-timing-function: ease;
+}
+
+.loading-image{
+  height: 80px;
+  width: 80px;
+}
+
 .article {
   width: 100%;
   display: flex;
@@ -39,6 +57,11 @@ body {
 
 @media screen and (max-width: 960px),
 screen and (orientation: portrait) {
+  .loading-image{
+    height: 50px;
+    width: 50px;
+  }
+
   .section {
     grid-template-columns: 5% 45% 45% 5%;
   }

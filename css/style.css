@@ -316,7 +316,7 @@ screen and (orientation: portrait) {
 		right: 0;
 		transition-delay: 1500ms;
 		transition-duration: 6000ms;
-		transition-timing-function: linear;
+		transition-timing-function: ease;
 	}
 }
 
@@ -361,12 +361,18 @@ screen and (orientation: portrait) {
 	.section-08 {
 		height: fit-content;
 		margin-bottom: 400px;
+		grid-template-rows: 1fr auto;
 	}
 
 	.container-08-01 {
 		order: 2;
 		grid-column: 2 / 4;
 		padding: 30px 0;
+	}
+
+	.inner-content08-01 {
+		padding-left: 5px;
+		padding-bottom: 0;
 	}
 
 	.container-08-02 {

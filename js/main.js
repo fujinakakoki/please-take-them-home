@@ -1,12 +1,13 @@
 ///////// jquery利用
 
-///////// 定数
+// 定数
 
+const fadeOutTime = 500;
 const scrollSpeed = 1000;
 const autoSwipeSpeed = 6000;
 const maxSpWidth = 960;
 
-///////// 変数
+// 変数
 
 let windowHeight,
     windowWidth,
@@ -26,6 +27,18 @@ let windowHeight,
     section11_position,
     section12_position,
     moveSize;
+
+// ロード後処理
+
+$(window).on("load", ()=>{
+    // なんかfadeOut()がiOSで効かなかったので応急処理
+    $(".loading").css("opacity", 0);
+    $(".loading").delay(fadeOutTime).queue(function(){
+        $(this).css("display", "none");
+    });
+})
+
+// ロード、リサイズ時処理
 
 $(window).on("load resize", () => {
     windowHeight = Math.floor( $(window).height());
@@ -74,7 +87,7 @@ $(window).on("load resize", () => {
 
 //// スクロール処理
 
-$("#body").on("click",() => {
+$("#main").on("click",() => {
     let nowPosition = $(window).scrollTop();
 
     switch (true) {
