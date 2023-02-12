@@ -328,14 +328,17 @@ screen and (orientation: portrait) {
 }
 
 /* ////////////////////////////////////////////////////////////////////////// */
+ /* セクション8のみflex */
 
 .section-08 {
+	display: flex;
 	margin-bottom: 250px;
+	padding: 0 10%;
 }
 
 
 .container-08-01 {
-	grid-column: 2 / 3;
+	width: 50%;
 	display: flex;
 	align-items: flex-end;
 }
@@ -346,15 +349,13 @@ screen and (orientation: portrait) {
 }
 
 .container-08-02 {
-	grid-column: 3 / 4;
+	width: 50%;
 	display: flex;
 	align-items: center;
 }
 
 .image-08 {
-	height: 105%;
 	width: 100%;
-	object-fit: cover;
 }
 
 @media screen and (max-width: 960px),
@@ -362,13 +363,14 @@ screen and (orientation: portrait) {
 	.section-08 {
 		height: fit-content;
 		margin-bottom: 400px;
-		grid-template-rows: 1fr auto;
+		padding: 0;
+		flex-direction: column;
 	}
 
 	.container-08-01 {
 		order: 2;
-		grid-column: 2 / 4;
-		padding: 30px 0;
+		width: 100%;
+		padding: 30px 5%;
 	}
 
 	.inner-content08-01 {
@@ -378,7 +380,7 @@ screen and (orientation: portrait) {
 
 	.container-08-02 {
 		order: 1;
-		grid-column: 1 / 5;
+		width: 100%;
 	}
 
 	.image-08 {

@@ -3,7 +3,7 @@
 // 定数
 
 const fadeOutTime = 500;
-const scrollSpeed = 1000;
+const scrollSpeed = 1500;
 const autoSwipeSpeed = 6000;
 const maxSpWidth = 960;
 
