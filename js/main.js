@@ -3,7 +3,7 @@
 // 定数
 
 const fadeOutTime = 500;
-const scrollSpeed = 1500;
+const scrollSpeed = 1800;
 const autoSwipeSpeed = 6000;
 const maxSpWidth = 960;
 
@@ -106,7 +106,7 @@ $("#main").on("click", () => {
             $("html").animate({ scrollTop: section05_position }, scrollSpeed, "swing");
             break;
         case nowPosition < section05_position_bottom - windowHeight && isSp:
-            $("html").animate({ scrollTop: section05_position_bottom - windowHeight }, scrollSpeed, "swing");
+            $("html").animate({ scrollTop: section05_position_bottom - windowHeight }, 1200, "swing");
             break;
         case nowPosition + (windowHeight / 2) < section06_position:
             $("html").animate({ scrollTop: section06_position_bottom - windowHeight }, scrollSpeed, "swing");

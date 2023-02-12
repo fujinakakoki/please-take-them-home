@@ -101,11 +101,15 @@ screen and (orientation: portrait) {
 }
 
 .container-04 {
+	height: inherit;
 	grid-column: 2 / 4;
+	display: grid;
+	grid-template-rows: 1fr auto;
+	
 }
 
 .inner-content-04-01 {
-	height: 30%;
+	grid-row: 1 / 2;
 	width: 100%;
 	display: flex;
 	align-items: center;
@@ -117,7 +121,8 @@ screen and (orientation: portrait) {
 }
 
 .inner-content-04-02 {
-	height: 70%;
+	grid-row: 2 / 3;
+	max-height: inherit;
 	width: 100%;
 	display: flex;
 	justify-content: flex-end;
@@ -125,8 +130,9 @@ screen and (orientation: portrait) {
 }
 
 .image-04-02 {
+	max-height: inherit;
 	max-width: 100%;
-	width: 1000px;
+	object-fit: cover;
 }
 
 @media screen and (max-width: 960px),
@@ -430,16 +436,17 @@ screen and (orientation: portrait) {
 
 .section-10 {
 	margin-bottom: 150px;
+	display: flex;
+	padding: 0 10%;
 }
 
 .container-10 {
-	grid-column: 2 / 3;
+	width: 50%;
 	display: flex;
 	align-items: center;
 }
 
 .image-10 {
-	max-height: 110%;
 	width: 100%;
 	object-fit: cover;
 }
@@ -447,8 +454,10 @@ screen and (orientation: portrait) {
 @media screen and (max-width: 960px),
 screen and (orientation: portrait) {
 	.section-10 {
+		display: grid;
 		height: fit-content;
 		margin-bottom: 50px;
+		padding: 0;
 	}
 
 	.container-10 {
