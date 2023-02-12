@@ -108,7 +108,7 @@ $("#main").on("click", () => {
         case nowPosition < section05_position_bottom - windowHeight && isSp:
             $("html").animate({ scrollTop: section05_position_bottom - windowHeight }, scrollSpeed, "swing");
             break;
-        case nowPosition < section06_position:
+        case nowPosition + (windowHeight / 2) < section06_position:
             $("html").animate({ scrollTop: section06_position_bottom - windowHeight }, scrollSpeed, "swing");
             break;
         case nowPosition < section07_position:

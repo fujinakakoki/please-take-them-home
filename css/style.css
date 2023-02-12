@@ -241,15 +241,11 @@ screen and (orientation: portrait) {
 		margin-bottom: 100px;
 	}
 
-	.container-06 {
+	.container-06-01 {
 		grid-column: 1 / 5;
 	}
 
-	.inner-content-wrapper-06 {
-		margin-top: 20px;
-	}
-
-	.inner-content-06 {
+	.content-06-02 {
 		width: 90%;
 	}
 }
@@ -328,7 +324,7 @@ screen and (orientation: portrait) {
 }
 
 /* ////////////////////////////////////////////////////////////////////////// */
- /* セクション8のみflex */
+/* セクション8のみflex */
 
 .section-08 {
 	display: flex;
