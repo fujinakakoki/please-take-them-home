@@ -19,6 +19,7 @@ let windowHeight,
     section05_position,
     section05_position_bottom,
     section06_position,
+    section06_position_bottom,
     section07_position,
     section08_position,
     section08_position_bottom,
@@ -30,10 +31,10 @@ let windowHeight,
 
 // ロード後処理
 
-$(window).on("load", ()=>{
+$(window).on("load", () => {
     // なんかfadeOut()がiOSで効かなかったので応急処理
     $(".loading").css("opacity", 0);
-    $(".loading").delay(fadeOutTime).queue(function(){
+    $(".loading").delay(fadeOutTime).queue(function () {
         $(this).css("display", "none");
     });
 })
@@ -41,8 +42,8 @@ $(window).on("load", ()=>{
 // ロード、リサイズ時処理
 
 $(window).on("load resize", () => {
-    windowHeight = Math.floor( $(window).height());
-    windowWidth = Math.floor( $(window).width());
+    windowHeight = Math.floor($(window).height());
+    windowWidth = Math.floor($(window).width());
     pageBottom = Math.floor($("html").height());
     isSp = windowWidth <= maxSpWidth;
     if ($("#section-02").length) {
@@ -60,11 +61,12 @@ $(window).on("load resize", () => {
     }
     if ($("#section-06").length) {
         section06_position = Math.floor($("#section-06").offset().top);
+        section06_position_bottom = Math.floor($("#section-06").offset().top + $("#section-06").height());
     }
     if ($("#section-07").length) {
         section07_position = Math.floor($("#section-07").offset().top);
     }
-    if( $(".image-07").length){
+    if ($(".image-07").length) {
         moveSize = $(".image-07").width() - windowWidth;
     }
     if ($("#section-08").length) {
@@ -87,7 +89,7 @@ $(window).on("load resize", () => {
 
 //// スクロール処理
 
-$("#main").on("click",() => {
+$("#main").on("click", () => {
     let nowPosition = $(window).scrollTop();
 
     switch (true) {
@@ -107,11 +109,11 @@ $("#main").on("click",() => {
             $("html").animate({ scrollTop: section05_position_bottom - windowHeight }, scrollSpeed, "swing");
             break;
         case nowPosition < section06_position:
-            $("html").animate({ scrollTop: section06_position }, scrollSpeed, "swing");
+            $("html").animate({ scrollTop: section06_position_bottom - windowHeight }, scrollSpeed, "swing");
             break;
         case nowPosition < section07_position:
             $("html").animate({ scrollTop: section07_position }, scrollSpeed, "swing");
-            $(".image-07").animate({"right": -moveSize + "px"})
+            $(".image-07").animate({ "right": -moveSize + "px" })
             break;
         case nowPosition < section08_position_bottom - windowHeight:
             $("html").animate({ scrollTop: section08_position_bottom - windowHeight }, scrollSpeed, "swing");
