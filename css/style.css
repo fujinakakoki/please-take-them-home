@@ -1,3 +1,7 @@
+.section-01{
+	position: relative;
+}
+
 .container-01 {
 	grid-column: 2 / 4;
 	display: flex;
@@ -162,7 +166,7 @@ screen and (orientation: portrait) {
 
 	.image-04-02 {
 		width: 100%;
-		max-height: auto;
+		max-height: 100%;
 	}
 }
 
@@ -171,6 +175,7 @@ screen and (orientation: portrait) {
 
 .section-05 {
 	height: fit-content;
+	min-height: auto;
 	margin-bottom: 300px;
 }
 
@@ -198,7 +203,6 @@ screen and (orientation: portrait) {
 	.container-05-01 {
 		grid-column: 1 / 5;
 		justify-content: flex-start;
-		height: fit-content;
 	}
 
 	.image-05 {
@@ -218,6 +222,7 @@ screen and (orientation: portrait) {
 	margin-bottom: 250px;
 	grid-template-rows: auto 1fr;
 	height: fit-content;
+	min-height: auto;
 }
 
 .container-06-01 {
@@ -366,6 +371,7 @@ screen and (orientation: portrait) {
 screen and (orientation: portrait) {
 	.section-08 {
 		height: fit-content;
+		min-height: auto;
 		margin-bottom: 400px;
 		padding: 0;
 		flex-direction: column;
@@ -396,6 +402,7 @@ screen and (orientation: portrait) {
 
 .section-09 {
 	padding: 100px 0;
+	margin-bottom: 200px;
 }
 
 .container-09-01 {
@@ -417,6 +424,7 @@ screen and (orientation: portrait) {
 screen and (orientation: portrait) {
 	.section-09 {
 		height: fit-content;
+		min-height: auto;
 		margin-bottom: 300px;
 	}
 
@@ -458,12 +466,14 @@ screen and (orientation: portrait) {
 	.section-10 {
 		display: grid;
 		height: fit-content;
+		min-height: auto;
 		margin-bottom: 50px;
 		padding: 0;
 	}
 
 	.container-10 {
 		grid-column: 1 / 5;
+		width: 100%;
 	}
 }
 
