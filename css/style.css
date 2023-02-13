@@ -1,5 +1,7 @@
 .section-01{
 	position: relative;
+	/* ヘルプメッセージが隠れるため対応 */
+	min-height: 360px;
 }
 
 .container-01 {
