@@ -263,8 +263,9 @@ screen and (orientation: portrait) {
 		grid-column: 1 / 5;
 	}
 
-	.content-06-02 {
-		width: 90%;
+	.container-06-02 {
+		grid-column: 1 / 5;
+		padding-left: 5%;
 	}
 }
 
