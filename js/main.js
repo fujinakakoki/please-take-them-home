@@ -30,22 +30,46 @@ let windowHeight,
     moveSize;
 
 // ロード後処理
+function disableScroll(event) {
+    event.preventDefault();
+}
+document.addEventListener('touchmove', disableScroll, {passive: false});
+document.addEventListener('wheel', disableScroll, {passive: false});
 
 $(window).on("load", () => {
     // なんかfadeOut()がiOSで効かなかったので応急処理
     $(".loading").css("opacity", 0);
     $(".loading").delay(fadeOutTime).queue(function () {
         $(this).css("display", "none");
+        document.removeEventListener('touchmove', disableScroll);
+        document.removeEventListener('wheel', disableScroll);
     });
 })
 
 // ロード、リサイズ時処理
 
 $(window).on("load resize", () => {
-    windowHeight = Math.floor($(window).height());
-    windowWidth = Math.floor($(window).width());
-    pageBottom = Math.floor($("html").height());
-    isSp = windowWidth <= maxSpWidth;
+    let windowHeight = Math.floor($(window).height());
+    let windowWidth = Math.floor($(window).width());
+    let pageBottom = Math.floor($("html").height());
+    let isSp = windowWidth <= maxSpWidth;
+
+    // 画像のsrc変更
+    if(isSp){
+        $(".image-02").attr("src", "./image/image_02_sp.png").removeClass("pc").addClass("sp")
+        $(".image-03").attr("src", "./image/image_03_sp.png").removeClass("pc").addClass("sp")
+        $(".image-04-02").attr("src", "./image/image_04_02_sp.png").removeClass("pc").addClass("sp")
+        $(".image-06").attr("src", "./image/image_06_sp.png").removeClass("pc").addClass("sp")
+        $(".image-09").attr("src", "./image/image_09_sp.png").removeClass("pc").addClass("sp")
+    }else{
+        $(".image-02").attr("src", "./image/image_02.png").removeClass("sp").addClass("pc")
+        $(".image-03").attr("src", "./image/image_03.png").removeClass("sp").addClass("pc")
+        $(".image-04-02").attr("src", "./image/image_04_02.png").removeClass("sp").addClass("pc")
+        $(".image-06").attr("src", "./image/image_06.png").removeClass("sp").addClass("pc")
+        $(".image-09").attr("src", "./image/image_09.png").removeClass("sp").addClass("pc")
+    }
+
+    // セクションスクロール
     if ($("#section-02").length) {
         section02_position = Math.floor($("#section-02").offset().top);
     }
@@ -87,10 +111,11 @@ $(window).on("load resize", () => {
     }
 });
 
-//// スクロール処理
+//// クリックスクロール処理
 
 $("#main").on("click", () => {
     let nowPosition = $(window).scrollTop();
+
 
     switch (true) {
         case nowPosition < section02_position:
