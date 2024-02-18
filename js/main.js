@@ -31,6 +31,8 @@ let windowHeight,
     section12_position,
     moveSize;
 
+    let scrollFlag = true;
+
 // ロード後処理
 function disableScroll(event) {
     event.preventDefault();
@@ -101,93 +103,96 @@ $(window).on("load resize", () => {
 });
 
 //// クリックスクロール処理
-let scrollSection = (np) => {
-    console.log("-------");
+let scrollSection = (nowPosition) => {
+    scrollFlag = false;
+    // console.log("-------");
     updateSectionSize(windowHeight);
     switch (true) {
         // s02へ移動
-        case np < section02_position:
+        case nowPosition < section02_position:
             page.animate({ scrollTop: section02_position }, scrollSpeed, "swing");
-            console.log("02:" + section02_position);
+            // console.log("02:" + section02_position);
             break;
         // s03へ移動
-        case np >= section02_position && np < section03_position:
+        case nowPosition >= section02_position && nowPosition < section03_position:
             page.animate({ scrollTop: section03_position }, scrollSpeed, "swing");
-            console.log("03:" + section03_position);
+            // console.log("03:" + section03_position);
             break;
         // s04へ移動
-        case np >= section03_position && np < section04_position:
+        case nowPosition >= section03_position && nowPosition < section04_position:
             page.animate({ scrollTop: section04_position }, scrollSpeed, "swing");
-            console.log("04:" + section04_position);
+            // console.log("04:" + section04_position);
             break;
         // s05へ移動
-        case np >= section04_position && np < section05_position:
+        case nowPosition >= section04_position && nowPosition < section05_position:
             page.animate({ scrollTop: section05_position }, scrollSpeed, "swing");
-            console.log("05:" + section05_position);
+            // console.log("05:" + section05_position);
             break;
         // s06へ移動（sp、かつ現在地点がsection05を最後まで表示していない場合）
-        case np >= section05_position && (np + windowHeight) < section05_position_bottom  && isSp:
+        case nowPosition >= section05_position && (nowPosition + windowHeight) < section05_position_bottom  && isSp:
             page.animate({ scrollTop: section05_position_bottom - windowHeight }, 1200, "swing");
-            console.log("06 sp:" + section06_position);
+            // console.log("06 sp:" + section06_position);
             break;
         // s06へ移動（*）
-        case np >= section05_position && np < section06_position:
+        case nowPosition >= section05_position && nowPosition < section06_position:
             page.animate({ scrollTop: section06_position }, scrollSpeed, "swing");
-            console.log("06:" + section06_position);
+            // console.log("06:" + section06_position);
             break;
         // s06の最後に移動（現在地点がsectrion06と同じか下、かつsection06を最後まで表示していない場合）
-        case np >= section06_position && (np + windowHeight) < section06_position_bottom:
+        case nowPosition >= section06_position && (nowPosition + windowHeight) < section06_position_bottom:
             page.animate({ scrollTop: section06_position_bottom - windowHeight }, scrollSpeed, "swing");
-            console.log("06_b:" + section06_position);
+            // console.log("06_b:" + section06_position);
             break;
         // s07へ移動
-        case np >= section06_position && np < section07_position:
+        case nowPosition >= section06_position && nowPosition < section07_position:
             page.animate({ scrollTop: section07_position }, scrollSpeed, "swing");
             $(".image-07").animate({ "right": -moveSize + "px" })
-            console.log("07:" + section07_position);
+            // console.log("07:" + section07_position);
             break;
         // s08へ移動（*）
-        case np >= section07_position　&& np < section08_position:
+        case nowPosition >= section07_position　&& nowPosition < section08_position:
             page.animate({ scrollTop: section08_position }, scrollSpeed, "swing");
-            console.log("08:" + section08_position);
+            // console.log("08:" + section08_position);
             break
-        // s08の最後へ移動（現在位置がsection07と同じか下、かつsection08をさいごまで表示していない場合）
-        case np >= section07_position && (np + windowHeight) < section08_position_bottom:
+        // s08の最後へ移動（現在位置がsection07と同じか下、かつsection08を最後まで表示していない場合）
+        case nowPosition >= section07_position && (nowPosition + windowHeight) < section08_position_bottom:
             page.animate({ scrollTop: section08_position_bottom - windowHeight }, scrollSpeed, "swing");
-            console.log("08_b:" + section08_position);
+            // console.log("08_b:" + section08_position);
             break;
         // s09へ移動（section08の最後を表示しており、かつ現在位置+画面の半分がs09より上の場合）
-        case (np + windowHeight) >= section08_position_bottom && np + (windowHeight / 2) < section09_position:
+        case (nowPosition + windowHeight) >= section08_position_bottom && nowPosition + (windowHeight / 2) < section09_position:
             if (isSp) {
                 page.animate({ scrollTop: section09_position - ((windowHeight - $("#section-09").height()) / 2 - 100) }, scrollSpeed, "swing");
-                console.log("09_sp:" + section09_position);
+                // console.log("09_sp:" + section09_position);
             } else {
                 page.animate({ scrollTop: section09_position }, scrollSpeed, "swing");
-                console.log("09:" + section09_position);
+                // console.log("09:" + section09_position);
             }
             break;
-        case np + (windowHeight / 2) < section10_position:
+        case nowPosition + (windowHeight / 2) < section10_position:
             page.animate({ scrollTop: section10_position + (($("#section-10").height() - windowHeight) / 2) }, scrollSpeed, "swing");
-            console.log("10:" + section10_position);
+            // console.log("10:" + section10_position);
             break;
-        case np + (windowHeight / 2) < section11_position:
+        case nowPosition + (windowHeight / 2) < section11_position:
             page.animate({ scrollTop: section11_position }, scrollSpeed, "swing");
-            console.log("11" + section11_position);
+            // console.log("11" + section11_position);
             break;
         
-        case np < Math.floor(page.height()) - windowHeight:
+        case nowPosition < Math.floor(page.height()) - windowHeight:
             page.animate({ scrollTop: Math.floor(page.height()) - windowHeight }, scrollSpeed, "swing");
-            console.log("bottom:" + (Math.floor(page.height()) - windowHeight));
-            console.log("page" + (Math.floor(page.height()) - windowHeight))
+            // console.log("bottom:" + (Math.floor(page.height()) - windowHeight));
+            // console.log("page" + (Math.floor(page.height()) - windowHeight))
             break;
         default:
             break;
     }
+    setTimeout(() => {scrollFlag = true}, scrollSpeed);
 }
 
 main.on("click", () => {
-    console.log("click");
     let nowPosition = $(window).scrollTop();
-    console.log("now" + nowPosition);
-    scrollSection(nowPosition)
+    if(scrollFlag){
+       
+        scrollSection(nowPosition)
+    }
 });
