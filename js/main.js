@@ -35,17 +35,17 @@ let windowHeight,
 
 // ロード後処理
 $(window).on("load", () => {
-    // なんかfadeOut()がiOSで効かなかったので応急処理
-    $(".loading").css("opacity", 0);
-    $(".loading").delay(fadeOutTime).queue(function () {
-        $(this).css("display", "none");
-    });
     // スクロールロック
     let noscroll = (event) => {
         event.preventDefault();
      }
     document.addEventListener('touchmove', noscroll, {passive: false});
     document.addEventListener('wheel', noscroll, {passive: false});
+    // なんかfadeOut()がiOSで効かなかったので応急処理
+    $(".loading").css("opacity", 0);
+    $(".loading").delay(fadeOutTime).queue(function () {
+        $(this).css("display", "none");
+    });
 })
 
 // サイズ更新
