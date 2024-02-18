@@ -13,6 +13,7 @@ let windowHeight,
     windowWidth,
     pageBottom,
     isSp,
+    nowPosition,
     section02_position,
     section03_position,
     section04_position,
@@ -49,10 +50,10 @@ $(window).on("load", () => {
 // ロード、リサイズ時処理
 
 $(window).on("load resize", () => {
-    let windowHeight = Math.floor($(window).height());
-    let windowWidth = Math.floor($(window).width());
-    let pageBottom = Math.floor($("html").height());
-    let isSp = windowWidth <= maxSpWidth;
+    windowHeight = Math.floor($(window).height());
+    windowWidth = Math.floor($(window).width());
+    pageBottom = Math.floor($("html").height());
+    isSp = windowWidth <= maxSpWidth;
 
     // 画像のsrc変更
     if(isSp){
@@ -114,8 +115,7 @@ $(window).on("load resize", () => {
 //// クリックスクロール処理
 
 $("#main").on("click", () => {
-    let nowPosition = $(window).scrollTop();
-
+    nowPosition = $(window).scrollTop();
 
     switch (true) {
         case nowPosition < section02_position:
