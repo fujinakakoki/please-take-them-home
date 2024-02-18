@@ -34,20 +34,18 @@ let windowHeight,
     let scrollFlag = true;
 
 // ロード後処理
-function disableScroll(event) {
-    event.preventDefault();
-}
-document.addEventListener('touchmove', disableScroll, {passive: false});
-document.addEventListener('wheel', disableScroll, {passive: false});
-
 $(window).on("load", () => {
     // なんかfadeOut()がiOSで効かなかったので応急処理
     $(".loading").css("opacity", 0);
     $(".loading").delay(fadeOutTime).queue(function () {
         $(this).css("display", "none");
-        document.removeEventListener('touchmove', disableScroll);
-        document.removeEventListener('wheel', disableScroll);
     });
+    // スクロールロック
+    let noscroll = (event) => {
+        event.preventDefault();
+     }
+    document.addEventListener('touchmove', noscroll, {passive: false});
+    document.addEventListener('wheel', noscroll, {passive: false});
 })
 
 // サイズ更新
@@ -189,10 +187,16 @@ let scrollSection = (nowPosition) => {
     setTimeout(() => {scrollFlag = true}, scrollSpeed);
 }
 
+// 画面クリック処理
 main.on("click", () => {
     let nowPosition = $(window).scrollTop();
     if(scrollFlag){
        
         scrollSection(nowPosition)
     }
+});
+
+// 戻るボタン押下
+$(".back-to-top").on("click", () => {
+    page.animate({ scrollTop: 0 }, scrollSpeed, "swing");
 });
