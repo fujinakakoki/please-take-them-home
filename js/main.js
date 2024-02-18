@@ -157,7 +157,7 @@ let scrollSection = (np) => {
             console.log("08_b:" + section08_position);
             break;
         // s09へ移動（section08の最後を表示しており、かつ現在位置+画面の半分がs09より上の場合）
-        case (np + windowHeight) > section08_position_bottom && np + (windowHeight / 2) < section09_position:
+        case (np + windowHeight) >= section08_position_bottom && np + (windowHeight / 2) < section09_position:
             if (isSp) {
                 page.animate({ scrollTop: section09_position - ((windowHeight - $("#section-09").height()) / 2 - 100) }, scrollSpeed, "swing");
                 console.log("09_sp:" + section09_position);
