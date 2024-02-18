@@ -548,6 +548,7 @@ screen and (orientation: portrait) {
 	flex-direction: column;
 	align-items: center;
 	padding-bottom: 20px;
+	position:relative;
 }
 
 .footer-text {
@@ -556,6 +557,17 @@ screen and (orientation: portrait) {
 	font-size: 10px;
 	font-weight: 100;
 	line-height: 15px;
+}
+
+.back-to-top {
+	position: absolute;
+	top: 0;
+	right: 0;
+	
+}
+
+.back-to-top::before {
+	font-size: 40px;
 }
 
 @media screen and (max-width: 960px),
