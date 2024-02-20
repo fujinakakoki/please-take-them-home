@@ -101,52 +101,62 @@ let scrollSection = (nowPosition) => {
         // s02へ移動
         case nowPosition < section02_position:
             page.animate({ scrollTop: section02_position }, scrollSpeed, "swing");
+            setTimeout(() => {scrollFlag = true}, scrollSpeed);
             // console.log("02:" + section02_position);
             break;
         // s03へ移動
         case nowPosition >= section02_position && nowPosition < section03_position:
             page.animate({ scrollTop: section03_position }, scrollSpeed, "swing");
+            setTimeout(() => {scrollFlag = true}, scrollSpeed);
             // console.log("03:" + section03_position);
             break;
         // s04へ移動
         case nowPosition >= section03_position && nowPosition < section04_position:
             page.animate({ scrollTop: section04_position }, scrollSpeed, "swing");
+            setTimeout(() => {scrollFlag = true}, scrollSpeed);
             // console.log("04:" + section04_position);
             break;
         // s05へ移動
         case nowPosition >= section04_position && nowPosition < section05_position:
             page.animate({ scrollTop: section05_position }, scrollSpeed, "swing");
+            setTimeout(() => {scrollFlag = true}, scrollSpeed);
             // console.log("05:" + section05_position);
             break;
         // s06へ移動（sp、かつ現在地点がsection05を最後まで表示していない場合）
         case nowPosition >= section05_position && (nowPosition + windowHeight) < section05_position_bottom  && isSp:
             page.animate({ scrollTop: section05_position_bottom - windowHeight }, 1200, "swing");
+            setTimeout(() => {scrollFlag = true}, scrollSpeed);
             // console.log("06 sp:" + section06_position);
             break;
         // s06へ移動（*）
         case nowPosition >= section05_position && nowPosition < section06_position:
             page.animate({ scrollTop: section06_position }, scrollSpeed, "swing");
+            setTimeout(() => {scrollFlag = true}, scrollSpeed);
             // console.log("06:" + section06_position);
             break;
         // s06の最後に移動（現在地点がsectrion06と同じか下、かつsection06を最後まで表示していない場合）
         case nowPosition >= section06_position && (nowPosition + windowHeight) < section06_position_bottom:
             page.animate({ scrollTop: section06_position_bottom - windowHeight }, scrollSpeed, "swing");
+            setTimeout(() => {scrollFlag = true}, scrollSpeed);
             // console.log("06_b:" + section06_position);
             break;
         // s07へ移動
         case nowPosition >= section06_position && nowPosition < section07_position:
             page.animate({ scrollTop: section07_position }, scrollSpeed, "swing");
-            $(".image-07").animate({ "right": -moveSize + "px" })
+            $(".image-07").animate({ "right": -moveSize + "px" });
+            setTimeout(() => {scrollFlag = true}, scrollSpeed + autoSwipeSpeed);
             // console.log("07:" + section07_position);
             break;
         // s08へ移動（*）
         case nowPosition >= section07_position　&& nowPosition < section08_position:
             page.animate({ scrollTop: section08_position }, scrollSpeed, "swing");
+            setTimeout(() => {scrollFlag = true}, scrollSpeed);
             // console.log("08:" + section08_position);
             break
         // s08の最後へ移動（現在位置がsection07と同じか下、かつsection08を最後まで表示していない場合）
         case nowPosition >= section07_position && (nowPosition + windowHeight) < section08_position_bottom:
             page.animate({ scrollTop: section08_position_bottom - windowHeight }, scrollSpeed, "swing");
+            setTimeout(() => {scrollFlag = true}, scrollSpeed);
             // console.log("08_b:" + section08_position);
             break;
         // s09へ移動（section08の最後を表示しており、かつ現在位置+画面の半分がs09より上の場合）
@@ -158,25 +168,28 @@ let scrollSection = (nowPosition) => {
                 page.animate({ scrollTop: section09_position }, scrollSpeed, "swing");
                 // console.log("09:" + section09_position);
             }
+            setTimeout(() => {scrollFlag = true}, scrollSpeed);
             break;
         case nowPosition + (windowHeight / 2) < section10_position:
             page.animate({ scrollTop: section10_position + (($("#section-10").height() - windowHeight) / 2) }, scrollSpeed, "swing");
+            setTimeout(() => {scrollFlag = true}, scrollSpeed);
             // console.log("10:" + section10_position);
             break;
         case nowPosition + (windowHeight / 2) < section11_position:
             page.animate({ scrollTop: section11_position }, scrollSpeed, "swing");
+            setTimeout(() => {scrollFlag = true}, scrollSpeed);
             // console.log("11" + section11_position);
             break;
         
         case nowPosition < Math.floor(page.height()) - windowHeight:
             page.animate({ scrollTop: Math.floor(page.height()) - windowHeight }, scrollSpeed, "swing");
+            setTimeout(() => {scrollFlag = true}, scrollSpeed);
             // console.log("bottom:" + (Math.floor(page.height()) - windowHeight));
             // console.log("page" + (Math.floor(page.height()) - windowHeight))
             break;
         default:
             break;
     }
-    setTimeout(() => {scrollFlag = true}, scrollSpeed);
 }
 
 // 画面クリック処理
