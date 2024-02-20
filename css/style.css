@@ -576,6 +576,8 @@ screen and (orientation: portrait) {
 .back-to-top {
 	width: 40px;
 	height: 40px;
+	position: relative;
+	z-index: 100;
 }
 
 @media screen and (max-width: 960px),
