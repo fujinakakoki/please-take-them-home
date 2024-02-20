@@ -1,7 +1,6 @@
 ///////// jquery利用
 
 // 定数
-
 const fadeOutTime = 500;
 const scrollSpeed = 1800;
 const autoSwipeSpeed = 6000;
@@ -10,7 +9,6 @@ const main = $("#main");
 const page = $("html")
 
 // 変数
-
 let windowHeight,
     windowWidth,
     pageBottom,
@@ -35,7 +33,7 @@ let windowHeight,
 
 // ロード後処理
 $(window).on("load", () => {
-    // スクロールロック
+    // // スクロールロック
     let noscroll = (event) => {
         event.preventDefault();
      }
@@ -191,7 +189,6 @@ let scrollSection = (nowPosition) => {
 main.on("click", () => {
     let nowPosition = $(window).scrollTop();
     if(scrollFlag){
-       
         scrollSection(nowPosition)
     }
 });
