@@ -33,7 +33,7 @@ let windowHeight,
 
 // html loaded
 $(window).on("DOMContentLoaded", () => {
-    // // スクロールロック
+    // スクロールロック
     let noscroll = (event) => {
         event.preventDefault();
      }
@@ -199,5 +199,7 @@ main.on("click", () => {
 
 // 戻るボタン押下
 $(".back-to-top").on("click", () => {
+    scrollFlag = false;
     page.animate({ scrollTop: 0 }, scrollSpeed, "swing");
+    setTimeout(() => {scrollFlag = true}, scrollSpeed);
 });
