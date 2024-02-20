@@ -198,7 +198,8 @@ main.on("click", () => {
 });
 
 // 戻るボタン押下
-$(".back-to-top").on("click", () => {
+//  メインスクロール処理（click）より優先度をあげるためにmouseupにしている
+$(".back-to-top").on("mouseup", () => {
     scrollFlag = false;
     page.animate({ scrollTop: 0 }, scrollSpeed, "swing");
     setTimeout(() => {scrollFlag = true}, scrollSpeed);
