@@ -31,14 +31,18 @@ let windowHeight,
 
     let scrollFlag = true;
 
-// ロード後処理
-$(window).on("load", () => {
+// html loaded
+$(window).on("DOMContentLoaded", () => {
     // // スクロールロック
     let noscroll = (event) => {
         event.preventDefault();
      }
     document.addEventListener('touchmove', noscroll, {passive: false});
     document.addEventListener('wheel', noscroll, {passive: false});
+})
+
+// ロード後処理
+$(window).on("load", () => {
     // なんかfadeOut()がiOSで効かなかったので応急処理
     $(".loading").css("opacity", 0);
     $(".loading").delay(fadeOutTime).queue(function () {
