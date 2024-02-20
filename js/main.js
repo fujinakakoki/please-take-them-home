@@ -2,7 +2,7 @@
 
 // 定数
 const fadeOutTime = 500;
-const scrollSpeed = 1800;
+const scrollSpeed = 180;
 const autoSwipeSpeed = 6000;
 const maxSpWidth = 960;
 const main = $("#main");
@@ -29,9 +29,9 @@ let windowHeight,
     section12_position,
     moveSize;
 
-    let scrollFlag = true;
+let scrollFlag = true;
 
-// ロード後処理
+// 完全ロード後処理
 $(window).on("load", () => {
     // なんかfadeOut()がiOSで効かなかったので応急処理
     $(".loading").css("opacity", 0);
@@ -41,7 +41,7 @@ $(window).on("load", () => {
 })
 
 // サイズ更新
-let updateSectionSize = (wh) => {
+let updateSectionSize = (windowHeight, windowWidth) => {
     // セクションスクロールサイズ取得
     section02_position = Math.floor($("#section-02").offset().top);
     section03_position = Math.floor($("#section-03").offset().top);
@@ -50,15 +50,15 @@ let updateSectionSize = (wh) => {
     section05_position_bottom = Math.floor($("#section-05").offset().top + $("#section-05").height());
     section06_position = Math.floor($("#section-06").offset().top);
     section06_position_bottom = Math.floor($("#section-06").offset().top + $("#section-06").height());
-    if(wh > $("#section-06").height()) {
-        section06_position = Math.floor(section06_position - ((wh - $("#section-06").height()) / 2));
+    if(windowHeight > $("#section-06").height()) {
+        section06_position = Math.floor(section06_position - ((windowHeight - $("#section-06").height()) / 2));
     }
     section07_position = Math.floor($("#section-07").offset().top);
     moveSize = $(".image-07").width() - windowWidth;
     section08_position = Math.floor($("#section-08").offset().top);
     section08_position_bottom = Math.floor($("#section-08").offset().top + $("#section-08").height());
-    if(wh > $("#section-08").height()) {
-        section06_position = Math.floor(section08_position - ((wh - $("#section-08").height()) / 2));
+    if(windowHeight > $("#section-08").height()) {
+        section06_position = Math.floor(section08_position - ((windowHeight - $("#section-08").height()) / 2));
     }
     section09_position = Math.floor($("#section-09").offset().top);
     section10_position = Math.floor($("#section-10").offset().top);
@@ -68,6 +68,7 @@ let updateSectionSize = (wh) => {
 
 // ロード、リサイズ時処理
 $(window).on("load resize", () => {
+    scrollFlag = true
     windowWidth = Math.floor($(window).width());
     isSp = windowWidth <= maxSpWidth;
 
@@ -89,14 +90,14 @@ $(window).on("load resize", () => {
     windowHeight = Math.floor($(window).height());
     pageBottom = Math.floor(page.height());
 
-    updateSectionSize(windowHeight);
+    updateSectionSize(windowHeight, windowWidth);
 });
 
 //// クリックスクロール処理
 let scrollSection = (nowPosition) => {
     scrollFlag = false;
     // console.log("-------");
-    updateSectionSize(windowHeight);
+    updateSectionSize(windowHeight, windowWidth);
     switch (true) {
         // s02へ移動
         case nowPosition < section02_position:
@@ -140,12 +141,12 @@ let scrollSection = (nowPosition) => {
             setTimeout(() => {scrollFlag = true}, scrollSpeed);
             // console.log("06_b:" + section06_position);
             break;
-        // s07へ移動
+        // s07へ移動 + 画像を自動スクロール
         case nowPosition >= section06_position && nowPosition < section07_position:
             page.animate({ scrollTop: section07_position }, scrollSpeed, "swing");
             $(".image-07").animate({ "right": -moveSize + "px" });
             setTimeout(() => {scrollFlag = true}, scrollSpeed + autoSwipeSpeed);
-            // console.log("07:" + section07_position);
+            // console.log("07:" + section07_position + ", move:" + moveSize);
             break;
         // s08へ移動（*）
         case nowPosition >= section07_position　&& nowPosition < section08_position:
@@ -204,6 +205,7 @@ main.on("click", () => {
 //  メインスクロール処理（click）より優先度をあげるためにmouseupにしている
 $(".back-to-top").on("mouseup", () => {
     scrollFlag = false;
+    $(".image-07").animate({ "right": "0px" });
     page.animate({ scrollTop: 0 }, scrollSpeed, "swing");
     setTimeout(() => {scrollFlag = true}, scrollSpeed);
 });
