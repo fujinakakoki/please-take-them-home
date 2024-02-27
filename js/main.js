@@ -39,7 +39,6 @@ let unlockUserScroll = () => { body.css("overflow", "visible") }
 
 // 完全ロード後処理
 $(window).on("load", () => {
-    lockUserScroll()
     $(".loading").css("opacity", 0);
     $(".loading").delay(fadeOutTime).queue(function () {
         $(this).css("display", "none");
@@ -110,14 +109,12 @@ let scrollSection = (nowPosition) => {
             case nowPosition < section02_position:
                 page.animate({ scrollTop: section02_position }, scrollSpeed, "swing")
                     .delay(scrollSpeed).queue(function () { scrollFlag = true; resolve(); }).dequeue();
-
                 // console.log("02:" + section02_position);
                 break;
             // s03へ移動
             case nowPosition >= section02_position && nowPosition < section03_position:
                 page.animate({ scrollTop: section03_position }, scrollSpeed, "swing")
                     .delay(scrollSpeed).queue(function () { scrollFlag = true; resolve(); }).dequeue();
-
                 // console.log("03:" + section03_position);
                 break;
             // s04へ移動
@@ -198,6 +195,7 @@ let scrollSection = (nowPosition) => {
             case nowPosition < Math.floor(page.height()) - windowHeight:
                 page.animate({ scrollTop: Math.floor(page.height()) - windowHeight }, scrollSpeed, "swing")
                     .delay(scrollSpeed).queue(() => { scrollFlag = true; resolve(); }).dequeue();
+                unlockUserScroll()
                 // console.log("bottom:" + (Math.floor(page.height()) - windowHeight));
                 // console.log("page" + (Math.floor(page.height()) - windowHeight))
                 break;
@@ -217,7 +215,6 @@ main.on("click", () => {
     if (scrollFlag) {
         scrollSection(nowPosition)
     }
-
 });
 
 // 戻るボタン押下
