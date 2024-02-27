@@ -151,7 +151,11 @@ let scrollSection = (nowPosition) => {
                     // 画像サイズが画面幅を超過している場合は07移動後に画像をスクロールする
                     page.animate({ scrollTop: section07_position }, scrollSpeed, "swing");
                     $(".image-07").animate({ "right": -moveSize + "px" })
-                        .delay(scrollSpeed + autoSwipeSpeed).queue(() => { scrollFlag = true; resolve();}).dequeue();
+                    setTimeout(function() {
+                        scrollFlag = true; 
+                        console.log("queue");
+                        resolve();
+                    }, scrollSpeed + autoSwipeSpeed)
                 } else {
                     page.animate({ scrollTop: section07_position }, scrollSpeed, "swing")
                         .delay(scrollSpeed).queue(() => { scrollFlag = true; resolve(); }).dequeue();
