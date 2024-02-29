@@ -80,6 +80,7 @@ screen and (orientation: portrait) {
 
 .section-03 {
 	margin-bottom: 200px;
+	content-visibility: hidden;
 }
 
 .container-03 {
@@ -106,6 +107,7 @@ screen and (orientation: portrait) {
 
 .section-04 {
 	margin-bottom: 250px;
+	content-visibility: hidden;
 }
 
 .container-04 {
@@ -182,6 +184,7 @@ screen and (orientation: portrait) {
 	height: fit-content;
 	min-height: auto;
 	margin-bottom: 300px;
+	content-visibility: hidden;
 }
 
 .container-05-01 {
@@ -228,6 +231,7 @@ screen and (orientation: portrait) {
 	grid-template-rows: auto 1fr;
 	height: fit-content;
 	min-height: auto;
+	content-visibility: hidden;
 }
 
 .container-06-01 {
@@ -273,6 +277,7 @@ screen and (orientation: portrait) {
 
 .section-07 {
 	margin-bottom: 250px;
+	content-visibility: hidden;
 }
 
 .container-07 {
@@ -349,6 +354,7 @@ screen and (orientation: portrait) {
 	display: flex;
 	margin-bottom: 250px;
 	padding: 0 10%;
+	content-visibility: hidden;
 }
 
 
@@ -409,6 +415,7 @@ screen and (orientation: portrait) {
 .section-09 {
 	padding: 100px 0;
 	margin-bottom: 200px;
+	content-visibility: hidden;
 }
 
 .container-09-01 {
@@ -454,6 +461,7 @@ screen and (orientation: portrait) {
 	margin-bottom: 150px;
 	display: flex;
 	padding: 0 10%;
+	content-visibility: hidden;
 }
 
 .container-10 {
@@ -487,6 +495,7 @@ screen and (orientation: portrait) {
 
 .section-11 {
 	margin-bottom: 200px;
+	content-visibility: hidden;
 }
 
 .container-11 {
@@ -516,6 +525,7 @@ screen and (orientation: portrait) {
 .section-12 {
 	min-height: 750px;
 	grid-template-rows: 1fr auto;
+	content-visibility: hidden;
 }
 
 .container-12 {
