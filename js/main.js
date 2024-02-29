@@ -107,30 +107,35 @@ let scrollSection = (nowPosition) => {
         switch (true) {
             // s02へ移動
             case nowPosition < section02_position:
+                $(".section-03").css("content-visibility","visible")
                 page.animate({ scrollTop: section02_position }, scrollSpeed, "swing")
                     .delay(scrollSpeed).queue(function () { scrollFlag = true; resolve(); }).dequeue();
                 // console.log("02:" + section02_position);
                 break;
             // s03へ移動
             case nowPosition >= section02_position && nowPosition < section03_position:
+                $(".section-04").css("content-visibility","visible")
                 page.animate({ scrollTop: section03_position }, scrollSpeed, "swing")
                     .delay(scrollSpeed).queue(function () { scrollFlag = true; resolve(); }).dequeue();
                 // console.log("03:" + section03_position);
                 break;
             // s04へ移動
             case nowPosition >= section03_position && nowPosition < section04_position:
+                $(".section-05").css("content-visibility","visible")
                 page.animate({ scrollTop: section04_position }, scrollSpeed, "swing")
                     .delay(scrollSpeed).queue(function () { scrollFlag = true; resolve(); }).dequeue();
                 // console.log("04:" + section04_position);
                 break;
             // s05へ移動
             case nowPosition >= section04_position && nowPosition < section05_position:
+                $(".section-06").css("content-visibility","visible")
                 page.animate({ scrollTop: section05_position }, scrollSpeed, "swing")
                     .delay(scrollSpeed).queue(function () { scrollFlag = true; resolve(); }).dequeue();
                 // console.log("05:" + section05_position);
                 break;
             // s06へ移動
             case nowPosition >= section05_position && nowPosition < section06_position:
+                $(".section-07").css("content-visibility","visible")
                 // 現在地点がsection05を最後まで表示していない場合は05を最後まで表示する
                 if ((nowPosition + windowHeight) < section05_position_bottom) {
                     page.animate({ scrollTop: section05_position_bottom - windowHeight }, 1200, "swing")
@@ -143,6 +148,7 @@ let scrollSection = (nowPosition) => {
                 break;
             // s07へ移動 + 画像を自動スクロール
             case nowPosition >= section06_position && nowPosition < section07_position:
+                $(".section-08").css("content-visibility","visible")
                 // 現在地点がsectrion06と同じか下、かつsection06を最後まで表示していない場合は06を最後まで表示する
                 if ((nowPosition + windowHeight) < section06_position_bottom) {
                     page.animate({ scrollTop: section06_position_bottom - windowHeight }, scrollSpeed, "swing")
@@ -164,6 +170,7 @@ let scrollSection = (nowPosition) => {
                 break;
             // s08へ移動
             case nowPosition >= section07_position && nowPosition < section08_position:
+                $(".section-09").css("content-visibility","visible")
                 // 現在位置がsection07と同じか下、かつsection08を最後まで表示していない場合
                 if ((nowPosition + windowHeight) < section08_position_bottom) {
                     page.animate({ scrollTop: section08_position_bottom - windowHeight }, scrollSpeed, "swing")
@@ -176,6 +183,7 @@ let scrollSection = (nowPosition) => {
                 break;
             // s09へ移動（section08の最後を表示しており、かつ現在位置+画面の半分がs09より上の場合）
             case (nowPosition + windowHeight) >= section08_position_bottom && nowPosition + (windowHeight / 2) < section09_position:
+                $(".section-10").css("content-visibility","visible")
                 if (isSp) {
                     page.animate({ scrollTop: section09_position - ((windowHeight - $("#section-09").height()) / 2 - 100) }, scrollSpeed, "swing")
                         .delay(scrollSpeed).queue(() => { scrollFlag = true; resolve(); }).dequeue();
@@ -187,11 +195,13 @@ let scrollSection = (nowPosition) => {
                 }
                 break;
             case nowPosition + (windowHeight / 2) < section10_position:
+                $(".section-11").css("content-visibility","visible")
                 page.animate({ scrollTop: section10_position + (($("#section-10").height() - windowHeight) / 2) }, scrollSpeed, "swing")
                     .delay(scrollSpeed).queue(() => { scrollFlag = true; resolve(); }).dequeue();
                 // console.log("10:" + section10_position);
                 break;
             case nowPosition + (windowHeight / 2) < section11_position:
+                $(".section-12").css("content-visibility","visible")
                 page.animate({ scrollTop: section11_position }, scrollSpeed, "swing")
                     .delay(scrollSpeed).queue(() => { scrollFlag = true; resolve(); }).dequeue();
                 // console.log("11" + section11_position);
