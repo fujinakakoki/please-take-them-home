@@ -540,27 +540,53 @@ screen and (orientation: portrait) {
 .footer {
 	grid-column: 2 / 4;
 	grid-row: 2 / 3;
+	display: flex;
+	justify-content: center;
 }
 
 .footer-container {
-	width: 100%;
+	width: 80%;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.footer-right-container {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: start;
 	padding-bottom: 20px;
+	position:relative;
 }
 
 .footer-text {
-	width: 80%;
 	font-family: "MyYuGothic", "游ゴシック体", sans-serif;
 	font-size: 10px;
 	font-weight: 100;
 	line-height: 15px;
 }
 
+.back-to-top-container {
+	height: 100%;
+	padding-bottom: 20px;
+	display: flex;
+	align-items: end;
+}
+
+.back-to-top {
+	width: 40px;
+	height: 40px;
+	position: relative;
+	z-index: 100;
+}
+
 @media screen and (max-width: 960px),
 screen and (orientation: portrait) {
 	.inner-content-12 {
+		width: 100%;
+	}
+
+	.footer-container {
 		width: 100%;
 	}
 
